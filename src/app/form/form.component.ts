@@ -27,6 +27,8 @@ export class FormComponent implements OnInit {
 
   get skills() {
     return this.empForm?.get('skills') as FormArray;
+    // Avoid Modifying the getter return value it may break binding between getter and the form 
+    // always better return the existing reference 
   }
   
   addSkill(){
